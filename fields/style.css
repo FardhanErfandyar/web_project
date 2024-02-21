@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+
+}
+
+body {
+    background: #ffffff;
+    color: #080808;
+}
+
+#header {
+    width: 100%;
+    height: 90vh;
+    background-image: url("logos/ssfixx.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-color: #e4e4e4;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav p {
+    width: 140px;
+    position: absolute;
+    right: 20%;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: #080808;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #080808;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.header-text {
+    margin-top: 10%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+.header-text h1 span {
+    color: #013a63;
+}
+
+#Lapangan1{
+    padding-top: 30px;
+    text-align: center;
+    height: 100vh;
+}
+
+#Lapangan1 p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+#Lapangan1 .pro-container{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#Lapangan1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease; 
+    position: relative;
+
+}
+
+#Lapangan1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+#Lapangan1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+#Lapangan1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#Lapangan1 .pro .des span{
+    color: #060603;
+    font-size: 20px;
+    
+}
+
+#Lapangan1 .pro .des h5{
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#Lapangan1 .pro .des i{
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#Lapangan1 .pro .des h4{
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+
