@@ -1,0 +1,67 @@
+*{
+    font-family: 'Poppins';
+}
+
+#Lapangan1{
+    text-align: center;
+}
+
+#Lapangan1 .pro-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#Lapangan1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease; 
+    position: relative;
+
+}
+
+#Lapangan1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+#Lapangan1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+#Lapangan1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#Lapangan1 .pro .des span{
+    color: #060603;
+    font-size: 20px;
+    
+}
+
+#Lapangan1 .pro .des h5{
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#Lapangan1 .pro .des i{
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#Lapangan1 .pro .des h4{
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+
