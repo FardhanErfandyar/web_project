@@ -6,6 +6,17 @@
 
 }
 
+.logo {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.body h1 {
+    color: #080808;
+}
+
 body {
     background: #ffffff;
     color: #080808;
@@ -34,60 +45,60 @@ body {
     margin-right: 20px; 
 }
 
-nav {
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.navbar {
+    background: none;
     background-color: #ffffff;
-    padding: 3px 3px 3px 3px;
-    width: 94%;
-    border-radius: 10px;
+    z-index: 1;
+    width: 90%;
+    padding: 0px 100px;
+    box-sizing: border-box;
+    position: fixed;
+    border-radius: 9px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
-.side-content {
+.navbar-list ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+    list-style: none;
+    padding: 0;
+
+}
+
+.navbar-list ul li {
+    margin-left: 50px;
+}
+
+.navbar-list ul li a {
+    font-size: 14px;
     text-decoration: none;
-    padding-right: 20%;
+    color: #080808;
+    display: block;
+    font-weight: bold;
+    transition: .4s ease;
 
 }
 
-.loginButton, .registration {
-    margin-right: 20px;
+.navbar-list ul li a:hover {
+    
+    transform: translateY(-5px);
 }
 
-.loginButton{
-    background-color: #FBA834;
-    width: 50pxs;
-}
-
-
-nav ul li {
+.navbar-list ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
 
-nav p {
-    width: 140px;
-    position: absolute;
-    right: 5%;
-    font-weight: bold;
-}
 
-nav ul li a {
-    color: #080808;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-}
-
-nav ul li a::after {
+.navbar-list ul li a::after {
     content: '';
     width: 0;
     height: 3px;
@@ -98,8 +109,41 @@ nav ul li a::after {
     transition: 0.5s;
 }
 
-nav ul li a:hover::after {
+.navbar-list ul li a:hover::after {
     width: 100%;
+}
+
+
+
+.navbar-list ul li button {
+    background: #FBA834;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+.navbar-list ul li button:hover {
+    transform: translateY(-7px);
+}
+
+.scroll {
+    background: none;
+    top: -100px;
+    border-radius: 20px;
+    width: 90%;
+    animation: fadedown .4s ease 1s forwards;
+}
+
+@keyframes fadedown {
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 20px;
+    }
 }
 
 

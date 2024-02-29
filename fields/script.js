@@ -1,9 +1,10 @@
-// var navbar = document.getElementById("navbar");
-
-//         window.onscroll = function () {
-//             if (window.pageXOffset >= navbar.offsetTop) {
-//                 navbar.classList.add("sticky");
-//             } else {
-//                 navbar.classList.remove("sticky");
-//             }
-//         };
+let navbar = document.querySelector('navbar');
+document.addEventListener('scroll', ()=>{
+    if(window.top.scrollY > 19){
+        navbar.classList.add('scroll');
+    }else {
+        navbar.classList.remove('scroll');
+        navbar.style.transition = '.4s ease'
+    }
+    
+})
