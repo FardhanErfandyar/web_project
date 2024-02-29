@@ -14,24 +14,58 @@ body {
 #header {
     width: 100%;
     height: 90vh;
-    background-image: url("logos/ssfixx.svg");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-color: #e4e4e4;
+    background-image: url("img/footballHeader.jpg");
+    background-size: cover;
+    background-position: left;
 }
 
+
 .container {
-    padding: 10px 10%;
+    padding: 3px 3%;
+}
+
+.side-content {
+    display: flex;
+    align-items: center;
+}
+
+.side-content .login,
+.side-content .signup {
+    margin-right: 20px; 
 }
 
 nav {
     display: flex;
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: #ffffff;
+    padding: 3px 3px 3px 3px;
+    width: 94%;
+    border-radius: 10px;
 }
+
+.side-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-decoration: none;
+    padding-right: 20%;
+
+}
+
+.loginButton, .registration {
+    margin-right: 20px;
+}
+
+.loginButton{
+    background-color: #FBA834;
+    width: 50pxs;
+}
+
 
 nav ul li {
     display: inline-block;
@@ -42,7 +76,7 @@ nav ul li {
 nav p {
     width: 140px;
     position: absolute;
-    right: 20%;
+    right: 5%;
     font-weight: bold;
 }
 
@@ -57,7 +91,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #080808;
+    background: #FBA834;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -72,15 +106,21 @@ nav ul li a:hover::after {
 .header-text {
     margin-top: 10%;
     font-size: 30px;
+    padding-left: 10%;
+}
+
+.header-text p {
+    color: #ffffff;
 }
 
 .header-text h1 {
     margin-top: 20px;
     font-size: 60px;
+    color: #ffffff;
 }
 
 .header-text h1 span {
-    color: #013a63;
+    color: #FBA834;
 }
 
 #Lapangan1{
