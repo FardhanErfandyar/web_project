@@ -44,4 +44,4 @@ Route::get('/home', function () {
 
 Route::get('/', [PostController::class, 'index']);
 
-Route::get('/home/{slug}', [PostController::class, 'show']);
+Route::get('/post/{id}', [PostController::class, 'show']);

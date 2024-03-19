@@ -12,10 +12,10 @@ class PostController extends Controller
         return view('home', ['posts' => Post::all()]);
     }
 
-    public function show($slug)
+    public function show($id)
     {
         return view('detail', [
-            'post' => Post::find($slug)
+            'post' => Post::find($id)
         ]);
     }
 }
