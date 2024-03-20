@@ -20,9 +20,7 @@
         <div class="navbar-list">
             <ul>
                 <li><a href="#">Add</a></li>
-                <li><a href="#">Futsal Fields</a></li>
                 <li><a href="{{ url('/profile')}}">Profile</a></li>
-                <li><a href="#">Contact</a></li>
                 <li><a href="{{ url('/login') }}"><button id="loginButton">Login</button></a></li>
             </ul>
         </div>
