@@ -1,38 +1,42 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylelog.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <title id="title">Fields</title>
-</head>
-<body>  
-    <div class="container">
+
+
+@extends('layouts.main')
+
+@section('signup')
+    
+    <div class="container-login">
         <div class="form-box">
             <h1>Sign Up</h1>
-            <form action="">
+            <form action="/signup" method="post">
+                @csrf
+
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class='bx bxs-user' ></i>
-                        <input type="username" placeholder="Username">
+                        <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Username">
                     </div>
+                    @error('name')
+                            <span class="error-message">{{ $message }}</span>
+                    @enderror
+
+                    <div class="input-field">
+                        <i class='bx bxs-envelope'></i>
+                        <input type="email" name="email" id="email" class="is-invalid" placeholder="Email">
+                    </div>
+                    @error('email')
+                            <span class="error-message">{{ $message }}</span>
+                    @enderror
 
                     <div class="input-field">
                         <i class='bx bxs-lock-alt'></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" name="password" id="password" class="is-invalid" placeholder="Password">
                     </div>
-
-                    <div class="input-field">
-                        <i class='bx bxs-lock-alt'></i>
-                        <input type="password" placeholder="Re-enter Password">
-                    </div>
-                    <a href="/login"><button type="button" id="LoginButton">Sign Up</button></a>
+                    @error('password')
+                            <span class="error-message">{{ $message }}</span>
+                    @enderror
+                    <a href="/signup"><button type="submit" id="SignupButton">Sign Up</button></a>
                 </div>
             </form>
         </div>
     </div>
-
-    
-</body>
-</html>
+@endsection

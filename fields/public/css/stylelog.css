@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.container {
+.container-login {
     width: 100%;
     height: 100vh;
     background-image: url("/img/footballHeader.jpg");
@@ -25,11 +25,12 @@
     padding: 50px 60px 70px;
     text-align: center;
     border-radius: 20px;
+    margin-top: 3%;
 }
 
 .form-box h1 {
     font-size: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     color: #FBA834;
     position: relative;
 }
@@ -55,6 +56,7 @@
     max-height: 65px;
     transition: max-height 0.5s;
     overflow: hidden;
+    position: relative;
 }
 
 input {
@@ -66,7 +68,7 @@ input {
 }
 
 .input-group {
-    height: 280px;
+    height: 300px;
 }
 
 .input-field i {
@@ -99,4 +101,74 @@ button {
 
 button:hover {
     background-color: #FFD56A;
+}
+
+/* error message */
+
+.error-message {
+    color: #dc3545;
+    font-size: 10px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+}
+
+.input-field input.is-invalid {
+    border-color: #dc3545;
+}
+
+.input-field input:focus+.error-message {
+    display: none;
+}
+
+
+/* alert dialog success */
+
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-success p {
+    margin: 0;
+}
+
+.alert-success a {
+    color: #0c5460;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alert-success a:hover {
+    text-decoration: underline;
+}
+
+/* alert dialog error */
+.alert-loginerror {
+    color: #7D0A0A;
+    background-color: #DF826C;
+    border-color: #BF3131;
+}
+
+.alert-loginerror p {
+    margin: 0;
+}
+
+.alert-loginerror a {
+    color: #BF3131;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alert-loginerror a:hover {
+    text-decoration: underline;
 }

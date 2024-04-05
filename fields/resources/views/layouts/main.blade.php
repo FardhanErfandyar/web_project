@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styledetail.css') }}" >
+    <link rel="stylesheet" href="css/stylelog.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <title>Fields</title>
@@ -12,31 +13,48 @@
 
 <!-- navbar -->
 
-
     <nav class="navbar"> 
         <div class="logo">
             <h1><a href="{{ url('/')}}">Fields.</a></h1>
         </div>
         <div class="navbar-list">
             <ul>
-                <li><a href="#">Add</a></li>
-                <li><a href="{{ url('/profile')}}">Profile</a></li>
-                <li><a href="{{ url('/login') }}"><button id="loginButton">Login</button></a></li>
+                @auth
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="/profile">Profile</a></li>
+
+                    <div class="dropdown">
+                        <a href="#">Welcome back, {{ auth()->user()->name }}</a>
+                        <div class="dropdown-content">
+                            <form action="/logout" method="post">
+                                @csrf
+                                
+                                <button type="submit">Logout</button>
+                            </form>
+                        </div>
+                    </div>
+                @else
+                    <a href="/login"><button id="loginButton">Login</button></a>
+                @endauth
             </ul>
         </div>
     </nav>
 
 
 <!-- futsal fields -->
-
-
 @yield('home')
 
-
 <!-- detai -->
-
 @yield('detail')
 
+{{-- Signup --}}
+@yield('signup')
+
+{{-- Login --}}
+@yield('login')
+
+{{-- profile --}}
+@yield('profile')
 
 <!-- contact -->
 
