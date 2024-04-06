@@ -49,7 +49,7 @@ body {
 
 .navbar {
     background: white;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: 1;
     width: 90%;
     padding: 0px 100px;
@@ -67,6 +67,9 @@ body {
 
 }
 
+.transparent {
+    background: rgba(255, 255, 255, 0.25);
+}
 
 .navbar-list ul {
     display: flex;
@@ -300,7 +303,7 @@ body {
 }
 
 .dropdown a{
-    text-decoration: none;
+    text-decoration:none;
     color: #FBA834;
     font-size: 14px;
     font-weight: bold;
@@ -396,9 +399,11 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 200px;
+    height: max-content;
+    min-height: 70vh;
     margin-top: 100px;
     margin-left: 40px;
+    margin-right: 40px;
 
 }
 

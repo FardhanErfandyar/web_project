@@ -79,6 +79,27 @@
     </div>
 </div>
 
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar');
+        var dropdownLinks = document.querySelectorAll('.navbar .dropdown a');
+
+        if (window.scrollY > 100) {
+            navbar.classList.remove('transparent');
+            // Mengubah warna teks dropdown menjadi putih
+            dropdownLinks.forEach(function(link) {
+                link.style.color = '#FBA834';
+            });
+        } else {
+            navbar.classList.add('transparent');
+            // Mengembalikan warna teks dropdown menjadi semula
+            dropdownLinks.forEach(function(link) {
+                link.style.color = '#ffff';
+            });
+        }
+    });
+</script>
+
 
 </body>
 </html>
