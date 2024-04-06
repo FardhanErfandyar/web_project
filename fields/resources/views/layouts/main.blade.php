@@ -15,7 +15,7 @@
 
     <nav class="navbar"> 
         <div class="logo">
-            <h1><a href="{{ url('/')}}">Fields.</a></h1>
+            <h1><a href="#">Fields.</a></h1>
         </div>
         <div class="navbar-list">
             <ul>

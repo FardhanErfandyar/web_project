@@ -2,7 +2,7 @@
 
 @section('district')
     <div class="districts">
-        <h1>Post District : <span>{{ $district }}</span></h1>
+        <h1>District : <span>{{ $district }}</span></h1>
         <section id="Lapangan1" class="section-p1">
             <div class="pro-container">
 
