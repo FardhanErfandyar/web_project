@@ -13,7 +13,7 @@
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class='bx bxs-user' ></i>
-                        <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Username">
+                        <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror" placeholder="Name">
                     </div>
                     @error('name')
                             <span class="error-message">{{ $message }}</span>

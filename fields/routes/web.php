@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Models\District;
 use App\Models\Post;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,17 @@ Route::get('/signup', [RegisterController::class, 'index']);
 
 Route::post('/signup', [RegisterController::class, 'store']);
 
+Route::get('/districts', function () {
+    return view('districts', [
+        'title' => 'Post Districts',
+        'districts' => District::all()
+    ]);
+});
+
+Route::get('/districts/{district:slug}', function (District $district) {
+    return view('district', [
+        'title' => $district->name,
+        'posts' => $district->posts,
+        'district' => $district->name,
+    ]);
+});

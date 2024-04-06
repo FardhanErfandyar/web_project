@@ -7,9 +7,18 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('home', ['posts' => Post::all()]);
+        $post = Post::latest();
+
+        if ($request->filled('search')) {
+            $post->where('name', 'like', '%' . $request->input('search') . '%');
+        }
+
+        return view('home', [
+            'title' => 'All Posts',
+            'posts' => $post->get()
+        ]);
     }
 
     public function show($id)

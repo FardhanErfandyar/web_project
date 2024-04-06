@@ -19,6 +19,9 @@
         </div>
         <div class="navbar-list">
             <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#Lapangan1">Venue</a></li>
+                <li><a href="/districts">Districts</a></li>
                 @auth
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="/profile">Profile</a></li>
@@ -55,6 +58,12 @@
 
 {{-- profile --}}
 @yield('profile')
+
+{{-- districts --}}
+@yield('districts')
+
+{{-- district (single post) --}}
+@yield('district')
 
 <!-- contact -->
 
