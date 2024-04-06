@@ -4,7 +4,7 @@ namespace App\Models;
 
 Post::insert([
     [
-        'image' => 'img/Fivas.jpg',
+        'image' => '/img/Fivas.jpg',
         'district_id' => 4,
         'address' => 'Jalan Keputih',
         'name' => 'Fiva Futsal',
@@ -17,7 +17,7 @@ Post::insert([
         'updated_at' => now(),
     ],
     [
-        'image' => 'img/hokky.jpg',
+        'image' => '/img/hokky.jpg',
         'district_id' => 3,
         'address' => 'Jalan Keputih',
         'name' => 'Hokky Futsal',
@@ -30,7 +30,7 @@ Post::insert([
         'updated_at' => now(),
     ],
     [
-        'image' => 'img/redd.jpg',
+        'image' => '/img/redd.jpg',
         'district_id' => 2,
         'address' => 'Jalan Keputih',
         'name' => 'Red Futsal',
@@ -43,7 +43,7 @@ Post::insert([
         'updated_at' => now(),
     ],
     [
-        'image' => 'img/pfs.jpg',
+        'image' => '/img/pfs.jpg',
         'district_id' => 1,
         'address' => 'Jalan Keputih',
         'name' => 'Premier Futsal Surabaya',
@@ -54,7 +54,34 @@ Post::insert([
         'slug' => 'premier-futsal-surabaya',
         'created_at' => now(),
         'updated_at' => now(),
+    ],
+    [
+        'image' => '/img/redf.jpg',
+        'district_id' => 1,
+        'address' => 'Jalan Keputih',
+        'name' => 'Green Futsal',
+        'time' => '09.00 - 17.00',
+        'facility' => 'Tennis Meja',
+        'price' => '100000',
+        'map' => 'maps maps maps',
+        'slug' => 'green-futsal-surabaya',
+        'created_at' => now(),
+        'updated_at' => now(),
     ]
+]);
+
+Post::create([
+    'image' => '/img/redf.jpg',
+    'district_id' => 1,
+    'address' => 'Jalan Keputih',
+    'name' => 'Green Futsal',
+    'time' => '09.00 - 17.00',
+    'facility' => 'Tennis Meja',
+    'price' => '100000',
+    'map' => 'maps maps maps',
+    'slug' => 'green-futsal-surabaya',
+    'created_at' => now(),
+    'updated_at' => now(),
 ]);
 
 District::insert([

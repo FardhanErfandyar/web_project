@@ -73,7 +73,7 @@
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
                 <p><i class='bx bxs-envelope'></i><a href="">contact@gmail.com</a></p>
-                <p><i class='bx bxs-phone'></i><a href="">0827266292</a></p>
+                <p><i class='bx bxs-phone'></i><a href="">08989898989</a></p>
             </div>
         </div>
     </div>
@@ -83,16 +83,19 @@
     window.addEventListener('scroll', function() {
         var navbar = document.querySelector('.navbar');
         var dropdownLinks = document.querySelectorAll('.navbar .dropdown a');
+        var dropdownContent = document.querySelector('.dropdown-content')
 
-        if (window.scrollY > 100) {
+        if (window.scrollY > 20) {
             navbar.classList.remove('transparent');
-            // Mengubah warna teks dropdown menjadi putih
+            dropdownContent.classList.remove('transparent');
+          
             dropdownLinks.forEach(function(link) {
                 link.style.color = '#FBA834';
             });
         } else {
             navbar.classList.add('transparent');
-            // Mengembalikan warna teks dropdown menjadi semula
+            dropdownContent.classList.add('transparent');
+      
             dropdownLinks.forEach(function(link) {
                 link.style.color = '#ffff';
             });

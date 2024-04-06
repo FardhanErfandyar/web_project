@@ -19,7 +19,6 @@
         {{-- search bar --}}
         <div class="search-comp">
             <form action="/">
-                @csrf
 
                 <div class="search">
                     <input type="search" class="search-input" placeholder="Search...">

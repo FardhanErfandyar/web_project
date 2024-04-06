@@ -7,17 +7,17 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $post = Post::latest();
 
-        if ($request->filled('search')) {
-            $post->where('name', 'like', '%' . $request->input('search') . '%');
+        if (request('search')) {
+            $post->where('name', 'like', '%' . request('search') . '%');
         }
 
         return view('home', [
             'title' => 'All Posts',
-            'posts' => $post->get()
+            'posts' => $post->paginate(33)
         ]);
     }
 
