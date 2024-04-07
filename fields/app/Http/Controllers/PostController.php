@@ -23,8 +23,9 @@ class PostController extends Controller
 
     public function show($id)
     {
+
         return view('detail', [
-            'post' => Post::find($id)
+            'post' => Post::findOrFail($id),
         ]);
     }
 }

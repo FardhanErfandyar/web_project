@@ -28,7 +28,7 @@ Route::get('/home', function () {
 
 Route::get('/', [PostController::class, 'index']);
 
-Route::get('/post/{id}', [PostController::class, 'show']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 

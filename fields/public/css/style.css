@@ -49,7 +49,8 @@ body {
 
 .navbar {
     background: white;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 6px 8px 6px rgba(0, 0, 0, 0.06);
     z-index: 1;
     width: 90%;
     padding: 0px 100px;
@@ -63,8 +64,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.5s ease;
-
+    transition: background 1s ease;
 }
 
 .transparent {
@@ -216,7 +216,7 @@ body {
     border: 1px;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 20px 20px 20px rgba(0, 0, 0, 0.02);
     margin: 15px 5px;
     transition: 0.2s ease;
     position: relative;
@@ -227,7 +227,7 @@ body {
 
 
 #Lapangan1 .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1), 5px 0 15px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -445,4 +445,55 @@ body {
 
 .districts ul li h2 a:hover {
     color: #0056b3;
+}
+
+
+/* profile */
+
+
+
+.profile-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-image {
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #FBA834;
+}
+
+h1 {
+    color: #FBA834;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #FBA834;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e19627;
 }

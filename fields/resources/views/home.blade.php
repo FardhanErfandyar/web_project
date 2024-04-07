@@ -47,7 +47,7 @@
 
 
             @foreach($posts->skip(1) as $post)
-                <a href="/post/{{ $post->id }}" class="pro" >
+                <a href="/post/{{ $post->id}}" class="pro" >
                     <img src="{{ $post->image}}" alt="">
                     <div class="des">
                         <span>{{ $post->district->name}}</span>
