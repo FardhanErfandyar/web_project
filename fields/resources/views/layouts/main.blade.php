@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/styledetail.css') }}" >
-    <link rel="stylesheet" href="css/stylelog.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/styledetail.css') }}" >
+    <link rel="stylesheet" href="/css/stylelog.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <title>Fields</title>
@@ -19,12 +19,12 @@
         </div>
         <div class="navbar-list">
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="{{ Request::path() === '/' ? 'active' : '' }}">Home</a></li> 
                 <li><a href="/#Lapangan1">Venue</a></li>
-                <li><a href="/districts">Districts</a></li>
+                <li><a href="/districts" class="{{ Request::path() === 'districts' ? 'active' : '' }}">Districts</a></li>
                 @auth
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/profile" class="{{ Request::path() === 'profile' ? 'active' : '' }}">Profile</a></li>
 
                     <div class="dropdown">
                         <a href="#">Welcome back, {{ auth()->user()->name }}</a>
@@ -99,6 +99,11 @@
             dropdownLinks.forEach(function(link) {
                 link.style.color = '#ffff';
             });
+        }
+
+        if (window.location.hash === '#Lapangan1') {
+        document.querySelector('.navbar-list ul li:nth-child(2) a').classList.add('active');
+        document.querySelector('.navbar-list ul li:nth-child(1) a').classList.remove('active');
         }
     });
 </script>

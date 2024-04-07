@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Models\District;
-use App\Models\Post;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -55,3 +54,9 @@ Route::get('/districts/{district:slug}', function (District $district) {
         'district' => $district->name,
     ]);
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->middleware('auth');
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');

@@ -90,6 +90,7 @@ body {
     display: block;
     font-weight: bold;
     transition: .4s ease;
+    position: relative;
 
 }
 
@@ -116,6 +117,11 @@ body {
     bottom: -7px;
     transition: 0.5s;
 }
+
+.navbar-list ul li a.active::after {
+    width: 100%;
+}
+
 
 .navbar-list ul a #loginButton::after {
     content: '';
