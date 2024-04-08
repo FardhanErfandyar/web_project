@@ -9,11 +9,8 @@
         <img src="{{ $post ->image }}" alt="">
         <h3>{{ $post ->address }}</h3>
         <h3>{{ $post->price }}</h3>
-        <td>{{ $post->address }}</td>
-              <td>{{ $post->district->name }}</td>
-              <td>Rp{{ $post->price }}</td>
-              <td>{{ $post->time }}</td>
-              <td>{{ $post->facility }}</td>
-
+        <h3>{{ $post->district->name }}</h3>
+        <h3>{{ $post->time }}</h3>
+        <h3>{{ $post->facility }}</h3>
     </div>
 @endsection
