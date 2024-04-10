@@ -12,7 +12,7 @@
     <link href="/css/dashboard.css" rel="stylesheet">
   </head>
   <body>
-    
+
 @include('dashboard.layouts.header')
 
 <div class="container-fluid">

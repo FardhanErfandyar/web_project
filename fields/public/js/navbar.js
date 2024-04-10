@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function() {
-        var navbar = document.querySelector('.navbar');
-        var dropdownLinks = document.querySelectorAll('.navbar .dropdown a');
+        var navbar = document.querySelector('.navbar-home');
+        var dropdownLinks = document.querySelectorAll('.navbar-home .dropdown a');
         var dropdownContent = document.querySelector('.dropdown-content')
 
         if (window.location.pathname === '/') {
