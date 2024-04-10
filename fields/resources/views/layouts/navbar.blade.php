@@ -4,7 +4,7 @@
         </div>
         <div class="navbar-list">
             <ul>
-                <li><a href="/" class="{{ Request::path() === '/' ? 'active' : '' }}">Home</a></li> 
+                <li><a href="/">Home</a></li> 
                 <li><a href="/#Lapangan1">Venue</a></li>
                 <li><a href="/districts" class="{{ Request::path() === 'districts' ? 'active' : '' }}">Districts</a></li>
                 @auth
