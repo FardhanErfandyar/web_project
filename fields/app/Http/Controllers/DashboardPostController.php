@@ -12,11 +12,22 @@ class DashboardPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        return view('dashboard.posts.index', [
-            'posts' => Post::all()
-        ]);
+
+    // Mengambil data postingan dan melewatkan ke tampilan
+    $posts = Post::all();
+
+    // Menerima pesan atau data lain yang Anda kirimkan dari metode insertlapangan()
+    $message = $request->session()->get('message');
+
+    // Mengembalikan tampilan dengan data postingan dan pesan sukses (jika ada)
+    return view('dashboard.posts.index', [
+        'posts' => $posts,
+        'message' => $message // Menyertakan pesan ke tampilan
+    ]);
+    
     }
 
     /**

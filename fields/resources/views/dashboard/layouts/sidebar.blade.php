@@ -6,11 +6,21 @@
               <span data-feather="home"></span>
               Dashboard
             </a>
+            @can('view_dashboard_add')
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/addfield') ? 'active' : '' }}" href="/dashboard/addfield">
+              <span data-feather="grid"></span>
+              Add Field
+              @endcan
+            @can('view_dashboard')
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
               <span data-feather="grid"></span>
               Posts
+              @endcan
             </a>
           </li>
         </ul>
