@@ -7,6 +7,7 @@ use App\Models\District;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\InsertFieldController;
 
 
 /*
@@ -55,8 +56,13 @@ Route::get('/districts/{district:slug}', function (District $district) {
     ]);
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/tambahlapangan', [InsertFieldController::class, 'tambahlapangan'])->name('tambahlapangan');   
+Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])->name('insertlapangan');
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth', 'can:view-dashboard');
+Route::resource('/dashboard/addfield', InsertFieldController::class)->middleware('auth', 'can:view-dashboard');
