@@ -21,24 +21,24 @@ class PermissionSeeder extends Seeder
     {
         $role_admin = Role::UpdateOrCreate(
             [
-            'name'=> 'admin'
+                'name' => 'admin'
             ],
-            ['name'=> 'admin']
+            ['name' => 'admin']
         );
 
         $role_user = Role::UpdateOrCreate(
             [
-            'name'=> 'user'
+                'name' => 'user'
             ],
-            ['name'=> 'user']
+            ['name' => 'user']
         );
 
         $role_guest = Role::UpdateOrCreate(
             [
-            'name'=> 'guest'
+                'name' => 'guest'
             ],
-            ['name'=> 'guest']
-            );
+            ['name' => 'guest']
+        );
 
 
         $permission = Permission::UpdateOrCreate(
@@ -58,22 +58,25 @@ class PermissionSeeder extends Seeder
         $role_admin->givePermissionTo($permission);
         $role_admin->givePermissionTo($permission2);
         $role_user->givePermissionTo($permission2);
-       
-        
-        $name= ['Hiekam', 'Ikam'];
 
-        foreach ($name as $name) {
-        $user = User::where('name', $name)->first();
 
-        if ($user) {
-            $user->assignRole('admin');
-        } else {
-        // Jika pengguna dengan nama pengguna yang sedang diperiksa tidak ditemukan,
-        // tetapkan peran 'user_general' ke pengguna tersebut
-            $user_general = User::create(['username' => $name]);
-            $user_general->assignRole('user_general');
+        $names = ['Hiekam', 'Ikam', 'ikan', 'fardhan'];
+
+        foreach ($names as $name) {
+            $user = User::where('name', $name)->first();
+
+            if ($user) {
+                if (!$user->hasRole('admin')) {
+                    // Tugaskan peran 'admin' ke pengguna jika belum memiliki peran tersebut
+                    $user->assignRole('admin');
+                }
+            } else {
+                // Jika pengguna dengan nama pengguna yang sedang diperiksa tidak ditemukan,
+                // tetapkan peran 'user_general' ke pengguna tersebut
+                $user_general = User::create(['username' => $name]);
+                $user_general->assignRole('user_general');
+            }
         }
-    }
 
     }
 }

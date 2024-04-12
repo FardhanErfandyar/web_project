@@ -1,12 +1,12 @@
 @extends('dashboard.layouts.main')
 
+@can('view_dashboard_add')
   @section('container')
     
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Posts</h1>
+        <h1 class="h2">Publish</h1>
     </div>   
     <div class="table-responsive">
-      <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Add New Field</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -39,6 +39,9 @@
               <td>
                 <a href="" class="badge bg-danger"><span data-feather='delete'></span></a>
               </td>
+              <td>
+                <a href="" class="badge bg-success"><span data-feather='arrow-up'></span></a>
+              </td>
             </tr>
             @endforeach
 
@@ -46,3 +49,5 @@
         </table>
       </div>
   @endsection
+
+  @endcan

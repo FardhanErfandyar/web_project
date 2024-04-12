@@ -56,13 +56,14 @@ Route::get('/districts/{district:slug}', function (District $district) {
     ]);
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
-Route::get('/tambahlapangan', [InsertFieldController::class, 'tambahlapangan'])->name('tambahlapangan');   
-Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])->name('insertlapangan');
+Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create']);
 
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth', 'can:view-dashboard');
-Route::resource('/dashboard/addfield', InsertFieldController::class)->middleware('auth', 'can:view-dashboard');
+Route::resource('/dashboard/posts', DashboardPostController::class);
+
+Route::get('/dashboard/admin/posts', [DashboardPostController::class, 'publish'])->middleware('can:view_dashboard');
+
+Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])->name('insertlapangan');
