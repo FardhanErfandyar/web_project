@@ -5,6 +5,7 @@ namespace App\Models;
 Post::insert([
     [
         'image' => '/img/Fivas.jpg',
+        'user_id' => 2,
         'district_id' => 4,
         'address' => 'Jalan Keputih',
         'name' => 'Fiva Futsal',
@@ -18,6 +19,7 @@ Post::insert([
     ],
     [
         'image' => '/img/hokky.jpg',
+        'user_id' => 1,
         'district_id' => 3,
         'address' => 'Jalan Keputih',
         'name' => 'Hokky Futsal',
@@ -31,6 +33,7 @@ Post::insert([
     ],
     [
         'image' => '/img/redd.jpg',
+        'user_id' => 1,
         'district_id' => 2,
         'address' => 'Jalan Keputih',
         'name' => 'Red Futsal',
@@ -44,6 +47,7 @@ Post::insert([
     ],
     [
         'image' => '/img/pfs.jpg',
+        'user_id' => 1,
         'district_id' => 1,
         'address' => 'Jalan Keputih',
         'name' => 'Premier Futsal Surabaya',
@@ -57,6 +61,7 @@ Post::insert([
     ],
     [
         'image' => '/img/redf.jpg',
+        'user_id' => 1,
         'district_id' => 1,
         'address' => 'Jalan Keputih',
         'name' => 'Green Futsal',

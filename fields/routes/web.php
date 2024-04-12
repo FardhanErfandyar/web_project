@@ -60,9 +60,9 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 
-Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create']);
+Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
-Route::resource('/dashboard/posts', DashboardPostController::class);
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::get('/dashboard/admin/posts', [DashboardPostController::class, 'publish'])->middleware('can:view_dashboard');
 

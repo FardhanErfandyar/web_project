@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('address');
             $table->foreignId('district_id');
+            $table->foreignId('user_id');
             $table->string('time');
             $table->string('facility');
             $table->decimal('price');
