@@ -9,15 +9,15 @@ class PostController extends Controller
 {
     public function index()
     {
-        $post = Post::latest();
+        $posts = Post::latest();
 
         if (request('search')) {
-            $post->where('name', 'like', '%' . request('search') . '%');
+            $posts->where('name', 'like', '%' . request('search') . '%');
         }
 
         return view('home', [
             'title' => 'All Posts',
-            'posts' => $post->paginate(33)
+            'posts' => $posts->paginate(33)
         ]);
     }
 

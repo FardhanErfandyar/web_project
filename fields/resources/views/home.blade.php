@@ -18,7 +18,7 @@
 
         {{-- search bar --}}
         <div class="search-comp">
-            <form action="/">
+            <form action="/" method="GET">
 
                 <div class="search">
                     <input type="search" class="search-input" placeholder="Search...">

@@ -1,6 +1,6 @@
 <nav class="navbar-home"> 
         <div class="logo">
-            <h1><a href="#">Fields.</a></h1>
+            <h1><a href="">Fields.</a></h1>
         </div>
         <div class="navbar-list">
             <ul>

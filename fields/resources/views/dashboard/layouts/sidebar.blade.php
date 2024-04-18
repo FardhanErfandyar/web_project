@@ -8,18 +8,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
+            <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
               <span data-feather="grid"></span>
               My Posts
             </a>
           </li>
         </ul>
 
+        @can('view_dashboard')
         <h6 class="sidebar-heading d-flex justtify=content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Administrator</span>
         </h6>
 
-        @can('view_dashboard')
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/admin/posts') ? 'active' : '' }}" href="/dashboard/admin/posts">

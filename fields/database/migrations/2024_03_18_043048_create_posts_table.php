@@ -23,7 +23,6 @@ return new class extends Migration {
             $table->string('facility');
             $table->decimal('price');
             $table->longText('map');
-            $table->string('slug');
             $table->timestamps();
         });
     }
