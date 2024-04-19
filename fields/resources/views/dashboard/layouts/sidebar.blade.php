@@ -27,6 +27,12 @@
               Publish
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/admin/districts*') ? 'active' : '' }}" href="/dashboard/admin/districts">
+              <span data-feather="map-pin"></span>
+              District
+            </a>
+          </li>
         </ul>
         @endcan
       </div>

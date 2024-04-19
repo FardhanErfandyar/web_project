@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Models\District;
@@ -62,8 +63,13 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
+
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::get('/dashboard/admin/posts', [DashboardPostController::class, 'publish'])->middleware('can:view_dashboard');
+
+Route::get('/dashboard/admin/districts', [DistrictController::class, 'dashboard'])->middleware('can:view_dashboard');
+
+Route::get('/dashboard/admin/districts/create', [DistrictController::class, 'create'])->middleware('auth');
 
 Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])->name('insertlapangan');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -23,6 +24,7 @@ class DashboardPostController extends Controller
             'posts' => $posts
         ]);
     }
+
     public function index(Request $request)
     {
 

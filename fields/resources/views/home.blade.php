@@ -33,7 +33,7 @@
 
             @if ($posts->count())
 
-                <a href="/post/{{ $posts[0]->id }}" class="pro" >
+                <a href="/post/{{ $posts[0]->id}}" class="pro" >
                     <img src="{{ $posts[0]->image}}" alt="">
                     <div class="des">
                         <span>{{ $posts[0]->district->name}}</span>
