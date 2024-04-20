@@ -14,11 +14,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="kecamatan" class="form-label">Kecamatan/Daerah</label>
-                        <input type="text" name="district" class="form-control" id="district" placeholder="Masukkan kecamatan atau daerah lapangan">
+                        <select class="form-select" name="district_id">
+
+                            @foreach ($districts as $district)
+                                <option value="{{ $district->id }}">{{ $district->name }}</option>
+                            @endforeach
+
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="kecamatan" class="form-label">Slug</label>
-                        <input type="text" name="slug" class="form-control" id="slug" placeholder="Slug">
+                        <label for="address" class="form-label">Alamat</label>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="Alamat">
                     </div>
                     <button type="submit" class="btn btn-dark">Submit</button>
                 </div>

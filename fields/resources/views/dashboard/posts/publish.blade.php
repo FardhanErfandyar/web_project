@@ -39,12 +39,6 @@
               <td>
                 <a href="" class="badge bg-danger"><span data-feather='delete'></span></a>
               </td>
-              <td>
-                <form action="" method="POST">
-                  @csrf
-                  <button type="submit" class="badge bg-success" title="Publish"><span data-feather='arrow-up'></span></button>
-                </form>
-              </td>
             </tr>
             @endforeach
 

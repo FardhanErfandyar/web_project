@@ -49,7 +49,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create');
+        return view('dashboard.posts.create', [
+            'districts' => District::all()
+        ]);
     }
 
     /**
@@ -60,7 +62,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
