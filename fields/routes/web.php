@@ -73,3 +73,7 @@ Route::get('/dashboard/admin/districts', [DistrictController::class, 'dashboard'
 Route::get('/dashboard/admin/districts/create', [DistrictController::class, 'create'])->middleware('auth');
 
 Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])->name('insertlapangan');
+
+Route::post('/dashboard/admin/districts/create/add', [DistrictController::class, 'store']);
+
+Route::delete('/dashboard/admin/districts/delete/{district:slug}', [DistrictController::class, 'destroy']);

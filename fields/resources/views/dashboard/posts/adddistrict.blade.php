@@ -25,7 +25,12 @@
                 <a href="/districts/{{ $district->slug }}" class="badge bg-info"><span data-feather='eye'></span></a>
               </td>
               <td>
-                <a href="" class="badge bg-danger ms-10"><span data-feather='delete'></span></a>
+                <form action="/dashboard/admin/districts/delete/{{ $district->slug }}" method="POST" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Delete this district?')"><span data-feather='delete'></span></button>
+
+                </form>
               </td>
             </tr>
             @endforeach
