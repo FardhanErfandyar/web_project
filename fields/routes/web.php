@@ -76,4 +76,4 @@ Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])
 
 Route::post('/dashboard/admin/districts/create/add', [DistrictController::class, 'store']);
 
-Route::delete('/dashboard/admin/districts/delete/{district:slug}', [DistrictController::class, 'destroy']);
+Route::delete('/dashboard/admin/districts/delete/{district:id}', [DistrictController::class, 'destroy']);

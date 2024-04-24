@@ -62,7 +62,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        return $request->file('image')->store('post-images');
     }
 
     /**
