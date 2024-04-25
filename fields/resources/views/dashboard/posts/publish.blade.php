@@ -37,7 +37,12 @@
                 <a href="" class="badge bg-warning"><span data-feather='edit'></span></a>
               </td>
               <td>
-                <a href="" class="badge bg-danger"><span data-feather='delete'></span></a>
+                <form action="/dashboard/posts/{{ $post->id }}" method="POST" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Delete this post?')"><span data-feather='delete'></span></button>
+
+                </form>
               </td>
             </tr>
             @endforeach
