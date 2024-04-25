@@ -49,13 +49,7 @@ Route::get('/districts', function () {
     ]);
 });
 
-Route::get('/districts/{district:slug}', function (District $district) {
-    return view('district', [
-        'title' => $district->name,
-        'posts' => $district->posts,
-        'district' => $district->name,
-    ]);
-});
+Route::get('/districts/{district:slug}', [DistrictController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -65,6 +59,8 @@ Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create']
 
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::delete('/dashboard/posts/{post:id}', [DashboardPostController::class, 'destroy'])->middleware('auth');
 
 Route::get('/dashboard/admin/posts', [DashboardPostController::class, 'publish'])->middleware('can:view_dashboard');
 

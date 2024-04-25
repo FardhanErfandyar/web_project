@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\District;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\Post;
 
 class DistrictController extends Controller
 {
+    public function index(District $district)
+    {
+        return view('district', [
+            'title' => $district->name,
+            'posts' => $district->posts,
+            'district' => $district->name,
+        ]);
+    }
+
     public function dashboard(Request $request)
     {
         $districts = District::all();
@@ -39,4 +49,7 @@ class DistrictController extends Controller
 
         return redirect('/dashboard/admin/districts')->with('success', 'District berhasil dihapus');
     }
+
+
+
 }

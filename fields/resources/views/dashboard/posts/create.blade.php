@@ -4,6 +4,13 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Add Field</h1>
         </div> 
+
+        @if (@session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="col-8 card">
             <form action="/dashboard/posts" method="POST" enctype="multipart/form-data">
             @csrf

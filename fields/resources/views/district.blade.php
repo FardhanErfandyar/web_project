@@ -8,7 +8,7 @@
 
                 @foreach($posts as $post)
                     <a href="/post/{{ $post->id }}" class="pro" >
-                        <img src="{{ $post->image}}" alt="">
+                        <img src="{{ asset('storage/'.$post->images[0]->image) }}" alt="{{ $post->name }}">
                         <div class="des">
                             <span>{{ $post->district->name}}</span>
                             <h5>{{ $post->name}}</h5>

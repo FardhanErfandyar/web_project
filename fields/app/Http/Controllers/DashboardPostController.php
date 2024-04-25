@@ -62,7 +62,30 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->file('image')->store('post-images');
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255|unique:posts',
+            'district_id' => 'required',
+            'address' => 'required',
+            'time' => 'required',
+            'facility' => 'nullable',
+            'price' => 'required',
+            'map' => 'nullable',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        $post = Post::create($validatedData);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = $image->store('post-images');
+                $post->images()->create(['image' => $filename]);
+            }
+        }
+
+        return redirect('/dashboard/posts')->with('success', 'Lapangan berhasil ditambah');
     }
 
     /**
@@ -107,7 +130,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect('/dashboard/posts')->with('success', 'Post berhasil dihapus');
     }
 
 }

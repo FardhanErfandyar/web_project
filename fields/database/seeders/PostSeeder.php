@@ -17,7 +17,6 @@ class PostSeeder extends Seeder
     {
         $posts = [
             [
-                'image' => '/img/Fivas.jpg',
                 'user_id' => 2,
                 'district_id' => 4,
                 'address' => 'Jalan Keputih',
@@ -30,7 +29,6 @@ class PostSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'image' => '/img/hokky.jpg',
                 'user_id' => 1,
                 'district_id' => 3,
                 'address' => 'Jalan Keputih',
@@ -43,7 +41,6 @@ class PostSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'image' => '/img/redd.jpg',
                 'user_id' => 1,
                 'district_id' => 2,
                 'address' => 'Jalan Keputih',
@@ -56,7 +53,6 @@ class PostSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'image' => '/img/pfs.jpg',
                 'user_id' => 1,
                 'district_id' => 1,
                 'address' => 'Jalan Keputih',
@@ -69,7 +65,6 @@ class PostSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'image' => '/img/redf.jpg',
                 'user_id' => 1,
                 'district_id' => 1,
                 'address' => 'Jalan Keputih',

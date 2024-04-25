@@ -14,15 +14,14 @@ return new class extends Migration {
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
             $table->string('name');
             $table->string('address');
             $table->foreignId('district_id');
             $table->foreignId('user_id');
             $table->string('time');
-            $table->string('facility');
+            $table->string('facility')->nullable();
             $table->decimal('price');
-            $table->longText('map');
+            $table->longText('map')->nullable();
             $table->timestamps();
         });
     }

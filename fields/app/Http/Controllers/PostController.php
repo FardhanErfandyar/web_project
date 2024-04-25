@@ -15,9 +15,11 @@ class PostController extends Controller
             $posts->where('name', 'like', '%' . request('search') . '%');
         }
 
+        $posts->with('images');
+
         return view('home', [
             'title' => 'All Posts',
-            'posts' => $posts->paginate(33)
+            'posts' => $posts->paginate(33),
         ]);
     }
 

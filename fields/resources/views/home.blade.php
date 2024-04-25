@@ -34,7 +34,7 @@
             @if ($posts->count())
 
                 <a href="/post/{{ $posts[0]->id}}" class="pro" >
-                    <img src="{{ $posts[0]->image}}" alt="">
+                        <img src="{{ asset('storage/'.$posts[0]->images[0]->image) }}" alt="{{ $posts[0]->name }}">
                     <div class="des">
                         <span>{{ $posts[0]->district->name}}</span>
                         <h5>{{ $posts[0]->name}}</h5>
@@ -48,7 +48,8 @@
 
             @foreach($posts->skip(1) as $post)
                 <a href="/post/{{ $post->id}}" class="pro" >
-                    <img src="{{ $post->image}}" alt="">
+
+                    <img src="{{ asset('storage/'.$post->images[0]->image) }}" alt="{{ $post->name }}">
                     <div class="des">
                         <span>{{ $post->district->name}}</span>
                         <h5>{{ $post->name}}</h5>
