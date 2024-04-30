@@ -14,10 +14,45 @@
     position: relative;
 }
 
+.form-boxrg {
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffff;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+.form-boxrg h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #FBA834;
+    position: relative;
+}
+
+.form-boxrg h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #FBA834;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 .form-box {
     width: 90%;
     max-width: 450px;
     position: absolute;
+    height: max-content +30%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
