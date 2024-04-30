@@ -43,6 +43,26 @@ class DistrictController extends Controller
         return redirect('/dashboard/admin/districts/create')->with('success', 'District berhasil ditambah');
     }
 
+    public function edit(Request $request, District $district)
+    {
+        return view('dashboard.posts.editdistrict', [
+            'district' => $district
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255|unique:districts,name,' . $id . ',id',
+            'slug' => 'required|unique:districts,slug,' . $id . ',id'
+        ]);
+
+        $district = District::findOrFail($id);
+        $district->update($validatedData);
+
+        return redirect('/dashboard/admin/districts/create')->with('success', 'District berhasil ditambah');
+    }
+
     public function destroy(District $district)
     {
         District::destroy($district->id);

@@ -31,6 +31,9 @@
                 <a href="/districts/{{ $district->slug }}" class="badge bg-info"><span data-feather='eye'></span></a>
               </td>
               <td>
+                <a href="/dashboard/admin/districts/edit/{{ $district->id }}" class="badge bg-warning"><span data-feather='edit'></span></a>
+              </td>
+              <td>
                 <form action="/dashboard/admin/districts/delete/{{ $district->id }}" method="POST" class="d-inline">
                   @method('delete')
                   @csrf

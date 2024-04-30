@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\ImageContrroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Models\District;
@@ -57,7 +58,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/posts/create', [DashboardPostController::class, 'create'])->middleware('auth');
 
-
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::delete('/dashboard/posts/{post:id}', [DashboardPostController::class, 'destroy'])->middleware('auth');
@@ -73,3 +73,9 @@ Route::post('/insertlapangan', [InsertFieldController::class, 'insertlapangan'])
 Route::post('/dashboard/admin/districts/create/add', [DistrictController::class, 'store']);
 
 Route::delete('/dashboard/admin/districts/delete/{district:id}', [DistrictController::class, 'destroy']);
+
+Route::get('/dashboard/admin/districts/edit/{district:id}', [DistrictController::class, 'edit']);
+
+Route::post('/dashboard/admin/districts/distritc/edit/{district:id}', [DistrictController::class, 'update']);
+
+Route::delete('/images/{image:id}', [ImageContrroller::class, 'destroyImage']);

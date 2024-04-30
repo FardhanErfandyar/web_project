@@ -6,6 +6,7 @@ use App\Models\District;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 
 class DashboardPostController extends Controller
@@ -71,7 +72,7 @@ class DashboardPostController extends Controller
             'facility' => 'nullable',
             'price' => 'required',
             'map' => 'nullable',
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
+            'images.*' => 'required|image|file',
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -107,7 +108,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.posts.editpost', [
+            'post' => $post,
+            'districts' => District::all()
+        ]);
     }
 
     /**
@@ -119,7 +123,29 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255|unique:posts,name,' . $post->id . ',id',
+            'district_id' => 'required',
+            'address' => 'required',
+            'time' => 'required',
+            'facility' => 'nullable',
+            'price' => 'required',
+            'map' => 'nullable',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        $post->update($validatedData);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = $image->store('post-images');
+                $post->images()->create(['image' => $filename]);
+            }
+        }
+
+        return redirect('/dashboard/posts')->with('success', 'Lapangan berhasil diupdate');
     }
 
     /**
@@ -132,7 +158,12 @@ class DashboardPostController extends Controller
     {
         Post::destroy($post->id);
 
+        foreach ($post->images as $image) {
+            Storage::delete($image->image);
+        }
+
         return redirect('/dashboard/posts')->with('success', 'Post berhasil dihapus');
     }
+
 
 }
