@@ -17,23 +17,24 @@ class RoleSeeder extends Seeder
     {
         $role_admin = Role::UpdateOrCreate(
             [
-            'name'=> 'admin'
+                'name' => 'admin'
             ],
-            ['name'=> 'admin']
+            ['name' => 'admin']
         );
         $role_user = Role::UpdateOrCreate(
             [
-            'name'=> 'user'
+                'name' => 'user'
             ],
-            ['name'=> 'user']
+            ['name' => 'user']
         );
 
         $role_guest = Role::UpdateOrCreate(
             [
-            'name'=> 'guest'
+                'name' => 'guest'
             ],
-            ['name'=> 'guest']
-            );
+            ['name' => 'guest']
+        );
 
     }
 }
+// php artisan db:seed --class=RoleSeeder

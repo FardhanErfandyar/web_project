@@ -29,6 +29,7 @@
         <h3>Kecamatan: {{ $post->district->name }}</h3>
         <h3>Jam Buka: {{ $post->time }}</h3>
         <h3>Fasilitas: {{ $post->facility }}</h3>
-    </div>
+        {!!$post->map!!}
+</div>
 @endsection
 

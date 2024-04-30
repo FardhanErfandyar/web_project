@@ -75,6 +75,8 @@ class DashboardPostController extends Controller
             'images.*' => 'required|image|file',
         ]);
 
+        $validatedData['map'] = strip_tags($request->map, '<iframe>');
+
         $validatedData['user_id'] = auth()->user()->id;
 
         $post = Post::create($validatedData);
@@ -133,6 +135,8 @@ class DashboardPostController extends Controller
             'map' => 'nullable',
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
+
+        $validatedData['map'] = strip_tags($request->map, '<iframe>');
 
         $validatedData['user_id'] = auth()->user()->id;
 
