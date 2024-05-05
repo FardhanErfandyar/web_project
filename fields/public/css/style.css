@@ -544,7 +544,11 @@ body {
 }
 
 .profile-image {
-    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.profile-image input {
+    margin-top: 20px;
 }
 
 .profile-image img {
@@ -554,17 +558,56 @@ body {
     border: 5px solid #FBA834;
 }
 
-h1 {
-    color: #FBA834;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #666666;
+.profile-container h1 {
     margin-bottom: 20px;
+    text-align: center;
+    color: #FBA834;
 }
 
-.button {
+.profile-container p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.card-body-profile {
+    align-self: left;
+    text-align: left;
+    /* Menetapkan label di dalam card-body-profile ke kiri */
+}
+
+.profile-container p {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-profile .image-form {
+    align-items: center;
+    width: max-content;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #333333;
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.btn {
     background-color: #FBA834;
     color: #ffffff;
     padding: 10px 20px;
@@ -574,7 +617,110 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.btn:hover {
     background-color: #e19627;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-upload input[type='file'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-upload-label {
+    background-color: #FBA834;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.file-upload-label.selected {
+    background-color: #ffffff;
+    color: #FBA834;
+}
+
+/* delete image button */
+
+.delete-image-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    width: 20%;
+    padding: 2px;
+    margin-bottom: 40px;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-image-button:hover {
+    background-color: #c82333;
+}
+
+/* error message */
+
+.error-message {
+    color: #dc3545;
+    font-size: 10px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+}
+
+.input-field input.is-invalid {
+    border-color: #dc3545;
+}
+
+.input-field input:focus+.error-message {
+    display: none;
+}
+
+.alert {
+    margin-top: 50px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-error {
+    color: #571515;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-success p {
+    margin: 0;
+}
+
+.alert-success a {
+    color: #0c5460;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alert-success a:hover {
+    text-decoration: underline;
 }
 

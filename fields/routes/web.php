@@ -23,7 +23,7 @@ use App\Http\Controllers\InsertFieldController;
 |
 */
 
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::resource('/profile', ProfileController::class)->middleware('auth');
 
 Route::get('/home', function () {
     return view('home');

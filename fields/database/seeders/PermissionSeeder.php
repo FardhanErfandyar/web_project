@@ -60,7 +60,7 @@ class PermissionSeeder extends Seeder
         $role_user->givePermissionTo($permission2);
 
 
-        $names = ['Hiekam', 'Ikam', 'ikan', 'fardhan'];
+        $names = ['Hiekam', 'Fardhan'];
 
         foreach ($names as $name) {
             $user = User::where('name', $name)->first();
