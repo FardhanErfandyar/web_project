@@ -4,32 +4,85 @@
 
 
 @section('detail')
+    {{-- new detail --}}
     <div id="detail">
-        <h2>{{ $post->name}}</h2>
 
-        <section class="container-image">
-            <div class="slider-wrapper">
-                <div class="slider">
-                    @foreach($post->images as $image)
-                        <img id="slide-{{ $loop->index }}" src="{{ asset('storage/'.$image->image) }}" alt="{{ $post->name }}">
-                     @endforeach
+        <div class = "card-wrapper">
+            <div class = "card">
+    
+                <!-- card left -->
+                <div class = "product-imgs">
+                    <div class = "img-display">
+                        <div class = "img-showcase">
+                            @foreach($post->images as $image)
+                                <img src="{{ asset('storage/'.$image->image) }}" alt="{{ $post->name }}">
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class = "img-select">
+                            @foreach($post->images as $image)
+                                <div class = "img-item">
+                                    <a href="#" data-id="{{ $loop->index+1 }}">
+                                        <img src="{{ asset('storage/'.$image->image) }}" alt="{{ $post->name }}">
+                                    </a>
+                                </div>
+                            @endforeach
+                    </div>
                 </div>
-                <div class="slider-nav">
-                    @foreach($post->images as $image)
-                        <a href="#slide-{{ $loop->index }}"></a>
-                    @endforeach
+    
+                <!-- card right -->
+                <div class = "product-content">
+                    <h2 class = "product-title">{{ $post->name}}</h2>
+                    <a href = "/districts/{{ $districtId}}" class = "product-link">{{ $post->district->name }}</a>
+                    <div class = "product-price">
+                        <p class = "new-price">Harga per Jam: <span>Rp{{ $post->price }}</span></p>
+                    </div>
+        
+                    <div class = "product-detail">
+                        <h2>Alamat:</h2>
+                        <p>{{ $post ->address }}</p>
+                        <ul>
+                        <li>Kecamatan: <span data-feather='eye'> {{ $post->district->name }}</span></span></li>
+                        <li>Fasilitas: <span>{{ $post->facility }}</span></li>
+                        <li>Jam Buka: <span>{{ $post->time }}</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="grid-item-bottom">
+            {!!$post->map!!} 
+        </div>
+        
+    </div>
 
 
-      
-        <h3>Alamat: {{ $post ->address }}</h3>
-        <h3>Harga: {{ $post->price }}</h3>
-        <h3>Kecamatan: {{ $post->district->name }}</h3>
-        <h3>Jam Buka: {{ $post->time }}</h3>
-        <h3>Fasilitas: {{ $post->facility }}</h3>
-        {!!$post->map!!}
-</div>
+
+
+
+    <script>
+        const imgs = document.querySelectorAll('.img-select a');
+        const imgBtns = [...imgs];
+        let imgId = 1;
+
+        imgBtns.forEach((imgItem) => {
+            imgItem.addEventListener('click', (event) => {
+                event.preventDefault();
+                imgId = imgItem.dataset.id;
+                slideImage();
+            });
+        });
+
+        function slideImage(){
+            const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+            document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+        }
+
+        window.addEventListener('resize', slideImage);        
+    </script>
+
+
 @endsection
 

@@ -82,8 +82,9 @@
                         <input class="form-control" type="file" id="images" accept="image/*" name="images[]" multiple onchange="previewImages()">
                     </div>
                     @error('images[]')
-                            <span class="text-danger mb-5">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                     @enderror
+                    <label for="images" class="form-label">Pilih file gambar (Maksimal 5 gambar)</label> <br><br>
 
 
                     <button type="submit" class="btn btn-dark">Submit</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -25,9 +26,12 @@ class PostController extends Controller
 
     public function show($id)
     {
+        $post = Post::findOrFail($id);
+        $district = $post->district->slug;
 
         return view('detail', [
-            'post' => Post::findOrFail($id),
+            'post' => $post,
+            'districtId' => $district,
         ]);
     }
 }

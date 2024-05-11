@@ -10,6 +10,11 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if (@session()->has('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
 
         <div class="col-8 card">
             <form action="/dashboard/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">

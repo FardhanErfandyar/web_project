@@ -41,7 +41,7 @@
             @csrf
             <div class="form-group-profile">
                 <div class="file-upload">
-                    <label for="file-upload" class="file-upload-label">Choose File</label>
+                    <label for="file-upload" class="file-upload-label">Choose Image</label>
                     <input id="file-upload" type="file" name="image" accept="image" onchange="updateButtonColor(this)">
                 </div>
             </div>

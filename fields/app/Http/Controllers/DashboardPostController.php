@@ -75,6 +75,13 @@ class DashboardPostController extends Controller
             'images.*' => 'required|image|file',
         ]);
 
+        if ($request->hasFile('images')) {
+            $totalImages = count($request->file('images'));
+            if ($totalImages > 5) {
+                return redirect()->back()->with('error', 'Maksimal 5 foto');
+            }
+        }
+
         $validatedData['map'] = strip_tags($request->map, '<iframe>');
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -125,6 +132,11 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+
+        $imageCount = $post->images()->count();
+
+        $maxImagesAllowed = 5;
+
         $validatedData = $request->validate([
             'name' => 'required|max:255|unique:posts,name,' . $post->id . ',id',
             'district_id' => 'required',
@@ -143,6 +155,13 @@ class DashboardPostController extends Controller
         $post->update($validatedData);
 
         if ($request->hasFile('images')) {
+            $newImageCount = count($request->file('images')) + $imageCount;
+
+            if ($newImageCount > $maxImagesAllowed) {
+                return redirect()->back()->with('error', 'Anda hanya diperbolehkan menambahkan ' . ($maxImagesAllowed - $imageCount) . ' foto lagi');
+            }
+
+            // Menambahkan gambar baru ke postingan
             foreach ($request->file('images') as $image) {
                 $filename = $image->store('post-images');
                 $post->images()->create(['image' => $filename]);

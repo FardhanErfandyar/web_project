@@ -11,6 +11,12 @@
             </div>
         @endif
 
+        @if(session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <div class="col-8 card">
             <form action="/dashboard/admin/districts/create/add" method="POST">
             @csrf
