@@ -15,7 +15,7 @@
             <div class="alert alert-danger">
                 {{ session('error') }}
             </div>
-        @endif
+        @endif  
 
         <div class="col-8 card">
             <form action="/dashboard/admin/districts/create/add" method="POST">

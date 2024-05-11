@@ -6,7 +6,7 @@
      <div id="header">
         <div class="container">
             <div class="header-text">
-                <p>Administrasi</p>
+                <h2><span>Field</span>s.</h2>
                 <h1>Lapangan <span>Futsal</span></h1>
             </div>
         </div>

@@ -67,12 +67,9 @@ class PermissionSeeder extends Seeder
 
             if ($user) {
                 if (!$user->hasRole('admin')) {
-                    // Tugaskan peran 'admin' ke pengguna jika belum memiliki peran tersebut
                     $user->assignRole('admin');
                 }
             } else {
-                // Jika pengguna dengan nama pengguna yang sedang diperiksa tidak ditemukan,
-                // tetapkan peran 'user_general' ke pengguna tersebut
                 $user_general = User::create(['username' => $name]);
                 $user_general->assignRole('user_general');
             }
