@@ -33,6 +33,12 @@
               District
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/admin/user') ? 'active' : '' }}" href="/dashboard/admin/user">
+            <span data-feather="users"></span>
+              User List
+            </a>
+          </li>
         </ul>
         @endcan
       </div>

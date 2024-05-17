@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\ImageContrroller;
 use App\Http\Controllers\ProfileController;
@@ -79,3 +80,5 @@ Route::get('/dashboard/admin/districts/edit/{district:id}', [DistrictController:
 Route::post('/dashboard/admin/districts/distritc/edit/{district:id}', [DistrictController::class, 'update']);
 
 Route::delete('/images/{image:id}', [ImageContrroller::class, 'destroyImage']);
+
+Route::resource('dashboard/admin/user', DashboardUserController::class)->middleware('auth');
