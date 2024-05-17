@@ -15,6 +15,7 @@
                     <div class="dropdown">
                         <a href="#">Welcome back, {{ auth()->user()->name }}</a>
                         <div class="dropdown-content">
+                            <li><a href="/dashboard/admin/user/{{ auth()->user()->id }}">Change Password</a></li>
                             <form action="/logout" method="post">
                                 @csrf
                                 

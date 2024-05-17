@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class DashboardUserController extends Controller
@@ -51,7 +52,11 @@ class DashboardUserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return view('changepassword', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -74,7 +79,21 @@ class DashboardUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $validatedData = $request->validate([
+            'old_password' => 'required',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        if (!Hash::check($validatedData['old_password'], $user->password)) {
+            return back()->withErrors(['old_password' => 'The provided password does not match our records.']);
+        }
+
+        $user->password = bcrypt($validatedData['password']);
+        $user->save();
+
+        return redirect('/profile')->with('success', 'Password berhasil diganti');
     }
 
     /**
