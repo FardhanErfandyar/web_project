@@ -13,7 +13,7 @@
     @endif
     
     <div class="table-responsive">
-      <a href="/dashboard/admin/districts/create" class="btn btn-primary mb-3">Add New district</a>
+      <a href="/dashboard/admin/districts/create" class="btn mb-3" style="background-color: #FEB941; color: white;">Add New district</a>
         <table class="table table-striped table-sm w-50">
           <thead>
             <tr>

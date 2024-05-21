@@ -6,7 +6,7 @@
         <h1 class="h2">Posts</h1>
     </div>   
     <div class="table-responsive">
-      <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Add New Field</a>
+      <a href="/dashboard/posts/create" class="btn mb-3" style="background-color: #FEB941; color: white;">Add New Field</a>
 
        @if (@session()->has('success'))
             <div class="alert alert-success" role="alert">
