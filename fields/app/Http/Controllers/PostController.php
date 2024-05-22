@@ -24,6 +24,23 @@ class PostController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $posts = Post::where(function ($query) use ($search) {
+            $query->where("name", "like", "%$search%")
+                ->orWhere("address", "like", "%$search%");
+        })
+            ->orWhereHas('district', function ($query) use ($search) {
+                $query->where("name", "like", "%$search%");
+            })
+            ->with('images')
+            ->paginate(33);
+
+        return view('home', compact('posts', 'search'));
+    }
+
+
     public function show($id)
     {
         $post = Post::findOrFail($id);

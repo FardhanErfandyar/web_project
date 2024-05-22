@@ -18,10 +18,10 @@
 
         {{-- search bar --}}
         <div class="search-comp">
-            <form action="/" method="GET">
+            <form action="/search#Lapangan1" method="GET">
 
                 <div class="search">
-                    <input type="search" class="search-input" placeholder="Search...">
+                    <input type="search" class="search-input" name="search" placeholder="Search...">
                     <button class="search-button" type="submit">Search</button>
                 </div>
             </form>

@@ -31,6 +31,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/', [PostController::class, 'index']);
+Route::get('/search', [PostController::class, 'search']);
 
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
