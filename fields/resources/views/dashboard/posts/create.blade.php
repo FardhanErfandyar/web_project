@@ -45,10 +45,17 @@
                     @enderror
 
                     <div class="mb-3">
-                        <label for="time" class="form-label">Waktu Operasional</label>
-                        <input type="text" name="time" value="{{ old('time') }}" class="form-control" id="time" placeholder="Waktu Operasional">
+                        <label for="timeweekends" class="form-label">Waktu Operasional Sabtu-Minggu</label>
+                        <input type="text" name="timeweekends" value="{{ old('timeweekends') }}" class="form-control" id="timeweekends" placeholder="Waktu Operasional Sabtu-Minggu">
                     </div>
-                    @error('time')
+                    @error('timeweekends')
+                            <span class="text-danger mb-5">{{ $message }}</span>
+                    @enderror
+                    <div class="mb-3">
+                        <label for="timeweekdays" class="form-label">Waktu Operasional Senin-Jumat</label>
+                        <input type="text" name="timeweekdays" value="{{ old('timeweekdays') }}" class="form-control" id="timeweekdays" placeholder="Waktu Operasional Senin-Jumat">
+                    </div>
+                    @error('timeweekdays')
                             <span class="text-danger mb-5">{{ $message }}</span>
                     @enderror
 

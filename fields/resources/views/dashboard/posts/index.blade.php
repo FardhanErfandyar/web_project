@@ -25,7 +25,8 @@
             <th scope="col">Address</th>
             <th scope="col">District</th>
             <th scope="col">Price</th>
-            <th scope="col">Operational Hours</th>
+            <th scope="col">Operational Hours Weekdays</th>
+            <th scope="col">Operational Hours Weekends</th>
             <th scope="col">facilities</th>
           </tr>
         </thead>
@@ -38,7 +39,8 @@
             <td>{{ $post->address }}</td>
             <td>{{ $post->district->name }}</td>
             <td>Rp{{ $post->price }}</td>
-            <td>{{ $post->time }}</td>
+            <td>{{ $post->timeweekdays }}</td>
+            <td>{{ $post->timeweekends }}</td>
             <td>{{ $post->facility }}</td>
             <td>
               <a href="/post/{{ $post->id }}" class="badge bg-info"><span data-feather='eye'></span></a>

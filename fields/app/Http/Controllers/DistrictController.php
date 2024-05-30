@@ -65,6 +65,10 @@ class DistrictController extends Controller
 
     public function destroy(District $district)
     {
+        if ($district->posts()->count() > 0) {
+            return redirect('/dashboard/admin/districts')->with('error', 'District tidak bisa dihapus karena masih ada post yang terhubung');
+        }
+
         District::destroy($district->id);
 
         return redirect('/dashboard/admin/districts')->with('success', 'District berhasil dihapus');

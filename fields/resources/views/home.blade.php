@@ -38,7 +38,7 @@
                     <div class="des">
                         <span>{{ $posts[0]->district->name}}</span>
                         <h5>{{ $posts[0]->name}}</h5>
-                        <h4>{{ $posts[0]->time}}</h4>
+                        <h4>{{ $posts[0]->timeweekdays}}</h4>
                     </div>
                 </a>
             @else
@@ -53,7 +53,7 @@
                     <div class="des">
                         <span>{{ $post->district->name}}</span>
                         <h5>{{ $post->name}}</h5>
-                        <h4>{{ $post->time}}</h4>
+                        <h4>{{ $posts[0]->timeweekdays}}</h4>
                     </div>
                 </a>
             @endforeach

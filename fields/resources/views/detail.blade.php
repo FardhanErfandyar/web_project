@@ -44,7 +44,8 @@
                         <ul>
                         <li><i class='bx bx-current-location'></i> Kecamatan: <span data-feather='eye'> {{ $post->district->name }}</span></span></li>
                         <li><i class='bx bxs-buildings'></i> Fasilitas: <span>{{ $post->facility }}</span></li>
-                        <li><i class='bx bxs-time-five'></i> Jam Buka: <span>{{ $post->time }}</span></li>
+                        <li><i class='bx bxs-time-five'></i> Jam Buka Senin-Jumat: <span>{{ $post->timeweekdays }}</span></li>
+                        <li><i class='bx bxs-time-five'></i> Jam Buka Sabtu-Minggu: <span>{{ $post->timeweekends }}</span></li>
                         </ul>
                     </div>
                 </div>

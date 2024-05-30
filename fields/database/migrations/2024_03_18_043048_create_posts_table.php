@@ -18,9 +18,10 @@ return new class extends Migration {
             $table->string('address');
             $table->foreignId('district_id');
             $table->foreignId('user_id');
-            $table->string('time');
+            $table->string('timeweekends');
+            $table->string('timeweekdays');
             $table->string('facility')->nullable();
-            $table->decimal('price');
+            $table->string('price');
             $table->longText('map')->nullable();
             $table->timestamps();
         });
