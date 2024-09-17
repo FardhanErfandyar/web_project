@@ -51,6 +51,27 @@
                 </div>
             </div>
         </div>
+                {{-- <!-- card right -->
+                <div class = "product-content">
+                    <h2 class = "product-title">{{ $post->name}}</h2>
+                    <a href = "/districts/{{ $districtId}}" class = "product-link">{{ $post->district->name }}</a>
+                    <div class = "product-price">
+                        <p class = "new-price">Harga per Jam: <span>Rp{{ $post->price }}</span></p>
+                    </div>
+        
+                    <div class = "product-detail">
+                        <h2>Alamat:</h2>
+                        <p>{{ $post ->address }}</p>
+                        <ul>
+                        <li><i class='bx bx-current-location'></i> Kecamatan: <span data-feather='eye'> {{ $post->district->name }}</span></span></li>
+                        <li><i class='bx bxs-buildings'></i> Fasilitas: <span>{{ $post->facility }}</span></li>
+                        <li><i class='bx bxs-time-five'></i> Jam Buka Senin-Jumat: <span>{{ $post->timeweekdays }}</span></li>
+                        <li><i class='bx bxs-time-five'></i> Jam Buka Sabtu-Minggu: <span>{{ $post->timeweekends }}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
 
         <div class="grid-item-bottom">
             {!!$post->map!!} 
